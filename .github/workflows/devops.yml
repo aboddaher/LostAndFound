@@ -36,6 +36,10 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
+      - name: Make gradlew executable
+        working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
+        run: chmod +x ./gradlew
+
       - name: Build Android project
         working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
         run: ./gradlew assembleDebug
@@ -56,6 +60,10 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
+
+      - name: Make gradlew executable
+        working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
+        run: chmod +x ./gradlew
 
       - name: Run Unit Tests
         working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
@@ -94,6 +102,10 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
+
+      - name: Make gradlew executable
+        working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
+        run: chmod +x ./gradlew
 
       - name: Package APK
         working-directory: ${{ env.ANDROID_BUILD_DIRECTORY }}
