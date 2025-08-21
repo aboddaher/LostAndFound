@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   MSDO:
-    # حالياً فقط windows-latest مدعوم
+    
     runs-on: windows-latest
 
     steps:
