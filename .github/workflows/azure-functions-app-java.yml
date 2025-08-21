@@ -5,14 +5,14 @@ on:
     branches: ["main"]
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'com-ucas-lostandfound'   
-  POM_XML_DIRECTORY: 'LostAndFound'                 
+  AZURE_FUNCTIONAPP_NAME: 'com-ucas-lostandfound'
+  POM_XML_DIRECTORY: '.'   
   DISTRIBUTION: 'zulu'
   JAVA_VERSION: '8'
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest 
+    runs-on: windows-latest
     environment: dev
     steps:
     - name: 'Checkout GitHub Action'
