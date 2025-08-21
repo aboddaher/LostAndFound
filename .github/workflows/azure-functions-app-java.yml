@@ -5,14 +5,14 @@ on:
     branches: ["main"]
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'your-app-name'   # غيّرها لاسم Function App عندك على Azure
-  POM_XML_DIRECTORY: 'LostAndFound'         # المجلد اللي فيه pom.xml (عدله حسب مكانك الفعلي)
-  DISTRIBUTION: 'zulu'                      # نسخة JDK
-  JAVA_VERSION: '8'                         # إصدار جافا
+  AZURE_FUNCTIONAPP_NAME: 'com-ucas-lostandfound'   
+  POM_XML_DIRECTORY: 'LostAndFound'                 
+  DISTRIBUTION: 'zulu'
+  JAVA_VERSION: '8'
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest # أو ubuntu-latest لو تفضل لينكس
+    runs-on: windows-latest 
     environment: dev
     steps:
     - name: 'Checkout GitHub Action'
@@ -26,9 +26,8 @@ jobs:
 
     - name: 'Build with Maven'
       shell: pwsh
-      run: |
-        cd ${{ env.POM_XML_DIRECTORY }}
-        mvn clean package
+      working-directory: ${{ env.POM_XML_DIRECTORY }}
+      run: mvn clean package
 
     - name: 'Deploy to Azure Function'
       uses: Azure/functions-action@v1
