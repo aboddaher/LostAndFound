@@ -10,7 +10,7 @@ on:
 env:
   JAVA_VERSION: 17
   DISTRIBUTION: zulu
-  ANDROID_BUILD_DIRECTORY: 'LostAndFound'   
+  ANDROID_BUILD_DIRECTORY: '.'
   AZURE_FUNCTIONAPP_BETA: 'com-ucas-lostandfound-beta'
   AZURE_FUNCTIONAPP_PROD: 'com-ucas-lostandfound'
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
